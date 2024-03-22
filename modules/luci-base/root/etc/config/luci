@@ -1,5 +1,5 @@
 config core main
-	option lang auto
+	option lang zh_cn
 	option mediaurlbase /luci-static/bootstrap
 	option resourcebase /luci-static/resources
 	
@@ -20,7 +20,7 @@ config internal sauth
 	
 config internal ccache
 	option enable 1
-		
+
 config internal themes
 
 config internal apply
