@@ -34,37 +34,6 @@ until not ln
 block:close()
 
 m = Map("fstab", translate("Mount Points"))
-s = m:section(TypedSection, "global", translate("Global Settings"))
-s.addremove = false
-s.anonymous = true
-
-detect = s:option(Button, "block_detect", translate("Generate Config"), translate("Find all currently attached filesystems and swap and replace configuration with defaults based on what was detected"))
-detect.inputstyle = "reload"
-
-detect.write = function(self, section)
-	luci.sys.call("block detect >/etc/config/fstab")
-	luci.http.redirect(luci.dispatcher.build_url("admin/system", "fstab"))
-end
-
-o = s:option(Flag, "anon_swap", translate("Anonymous Swap"), translate("Mount swap not specifically configured"))
-o.default = o.disabled
-o.rmempty = false
-
-o = s:option(Flag, "anon_mount", translate("Anonymous Mount"), translate("Mount filesystems not specifically configured"))
-o.default = o.disabled
-o.rmempty = false
-
-o = s:option(Flag, "auto_swap", translate("Automount Swap"), translate("Automatically mount swap on hotplug"))
-o.default = o.enabled
-o.rmempty = false
-
-o = s:option(Flag, "auto_mount", translate("Automount Filesystem"), translate("Automatically mount filesystems on hotplug"))
-o.default = o.enabled
-o.rmempty = false
-
-o = s:option(Flag, "check_fs", translate("Check filesystems before mount"), translate("Automatically check filesystem for errors before mounting"))
-o.default = o.disabled
-o.rmempty = false
 
 local mounts = luci.sys.mounts()
 local non_system_mounts = {}
@@ -132,7 +101,7 @@ unmount.write = function(self, section)
         end
 end
 
-mount = m:section(TypedSection, "mount", translate("Mount Points"), translate("Mount Points define at which point a memory device will be attached to the filesystem"))
+mount = m:section(TypedSection, "mount", translate("Mount Points"))
 mount.anonymous = true
 mount.addremove = true
 mount.template = "cbi/tblsection"
@@ -207,31 +176,13 @@ fs.cfgvalue = function(self, section)
 	return e and e.type or m.uci:get("fstab", section, "fstype") or "?"
 end
 
-op = mount:option(DummyValue, "options", translate("Options"))
+op = mount:option(DummyValue, "options", translate("Mount options"))
 op.cfgvalue = function(self, section)
 	return Value.cfgvalue(self, section) or "defaults"
 end
 
-rf = mount:option(DummyValue, "is_rootfs", translate("Root"))
-rf.cfgvalue = function(self, section)
-	local target = m.uci:get("fstab", section, "target")
-	if target == "/" then
-		return translate("yes")
-	elseif target == "/overlay" then
-		return translate("overlay")
-	else
-		return translate("no")
-	end
-end
 
-ck = mount:option(DummyValue, "enabled_fsck", translate("Check"))
-ck.cfgvalue = function(self, section)
-	return Value.cfgvalue(self, section) == "1"
-		and translate("yes") or translate("no")
-end
-
-
-swap = m:section(TypedSection, "swap", "SWAP", translate("If your physical memory is insufficient unused data can be temporarily swapped to a swap-device resulting in a higher amount of usable <abbr title=\"Random Access Memory\">RAM</abbr>. Be aware that swapping data is a very slow process as the swap-device cannot be accessed with the high datarates of the <abbr title=\"Random Access Memory\">RAM</abbr>."))
+swap = m:section(TypedSection, "swap", translate("Swap"))
 swap.anonymous = true
 swap.addremove = true
 swap.template = "cbi/tblsection"
