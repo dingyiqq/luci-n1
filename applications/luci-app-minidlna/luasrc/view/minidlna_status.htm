@@ -1,0 +1,29 @@
+<script type="text/javascript">//<![CDATA[
+	XHR.poll(5, '<%=url("admin/services/minidlna_status")%>', null,
+		function(x, st)
+		{
+			var tb = document.getElementById('minidlna_status');
+			if (st && tb)
+			{
+				if (st.running)
+				{
+					tb.innerHTML = String.format(
+						'<em><b><font color=green><%:Service is active, serving %d audio, %d video and %d image files.%></font></b></em>',
+							st.audio, st.video, st.image
+					);
+				}
+				else
+				{
+					tb.innerHTML = '<em><b><font color=red><%:Service is not running.%></font></b></em>';
+				}
+			}
+		}
+	);
+//]]></script>
+
+<fieldset class="cbi-section">
+	<legend><%:miniDLNA Status%></legend>
+	<p id="minidlna_status">
+		<em><%:Collecting data...%></em>
+	</p>
+</fieldset>

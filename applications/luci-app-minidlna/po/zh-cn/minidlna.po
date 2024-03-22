@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2018-04-24\n"
+"Last-Translator: DingYi <dingyi139@gmail.com>\n"
+"Language-Team: none\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.6\n"
+
+msgid "Advanced Settings"
+msgstr "高级设置"
+
+msgid "Album art names:"
+msgstr "封面名称"
+
+msgid "Allow wide links:"
+msgstr "允许全局链接"
+
+msgid "Announced model number:"
+msgstr "通告型号"
+
+msgid "Announced serial number:"
+msgstr "通告编号"
+
+msgid "Browse directory"
+msgstr "浏览目录"
+
+msgid "Collecting data..."
+msgstr "收集数据..."
+
+msgid "Database directory:"
+msgstr "数据库目录"
+
+msgid "Enable TIVO:"
+msgstr "启用 TIVO"
+
+msgid "Enable inotify:"
+msgstr "启用监控"
+
+msgid "Enable:"
+msgstr "启用"
+
+msgid "Friendly name:"
+msgstr "名称"
+
+msgid "General Settings"
+msgstr "基本设置"
+
+msgid "Interfaces:"
+msgstr "接口"
+
+msgid "Log directory:"
+msgstr "日志目录"
+
+msgid "Media directories:"
+msgstr "媒体目录"
+
+msgid "Music"
+msgstr "音乐"
+
+msgid "Notify interval:"
+msgstr "通知间隔"
+
+msgid "Pictures"
+msgstr "图片"
+
+msgid "Port:"
+msgstr "端口"
+
+msgid "Presentation URL:"
+msgstr "服务网址"
+
+msgid "Root container:"
+msgstr "根目录"
+
+msgid "Standard container"
+msgstr "基本目录"
+
+msgid "Strict to DLNA standard:"
+msgstr "严格标准"
+
+msgid "Service is active, serving %d audio, %d video and %d image files."
+msgstr "miniDLNA 服务已启用！ 提供 %d 音频 %d 视频 和 %d 图片"
+
+msgid "Service is not running."
+msgstr "miniDLNA 服务未启用"
+
+msgid "Video"
+msgstr "视频"
+
+msgid "MiniDLNA"
+msgstr "媒体服务"
+
+msgid "miniDLNA"
+msgstr "媒体服务"
+
+msgid "miniDLNA Settings"
+msgstr "miniDLNA 设置"
+
+msgid "miniDLNA Status"
+msgstr "miniDLNA 状态"
+
+msgid "miniSSDP socket:"
+msgstr "miniSSDP 套接字"
