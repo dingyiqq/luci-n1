@@ -647,10 +647,7 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 			encr:value("wpa", "WPA-EAP", {mode="ap"}, {mode="ap-wds"})
 			encr:value("wpa2", "WPA2-EAP", {mode="ap"}, {mode="ap-wds"})
 		end
-		encr.description = translate(
-			"WPA-Encryption requires wpa_supplicant (for client mode) or hostapd (for AP " ..
-			"and ad-hoc mode) to be installed."
-		)
+		
 	elseif not hostapd and supplicant then
 		encr:value("psk", "WPA-PSK", {mode="sta"}, {mode="sta-wds"}, {mode="adhoc"})
 		encr:value("psk2", "WPA2-PSK", {mode="sta"}, {mode="sta-wds"}, {mode="adhoc"})
@@ -659,15 +656,9 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 			encr:value("wpa", "WPA-EAP", {mode="sta"}, {mode="sta-wds"})
 			encr:value("wpa2", "WPA2-EAP", {mode="sta"}, {mode="sta-wds"})
 		end
-		encr.description = translate(
-			"WPA-Encryption requires wpa_supplicant (for client mode) or hostapd (for AP " ..
-			"and ad-hoc mode) to be installed."
-		)
+		
 	else
-		encr.description = translate(
-			"WPA-Encryption requires wpa_supplicant (for client mode) or hostapd (for AP " ..
-			"and ad-hoc mode) to be installed."
-		)
+		
 	end
 elseif hwtype == "broadcom" then
 	encr:value("psk", "WPA-PSK")
