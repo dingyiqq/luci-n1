@@ -395,7 +395,7 @@ msgid "Backup"
 msgstr "备份"
 
 msgid "Backup / Flash Firmware"
-msgstr "备份/升级"
+msgstr "备份/恢复"
 
 msgid "Backup file list"
 msgstr "文件备份列表"
