@@ -2878,7 +2878,7 @@ msgid "Uploaded File"
 msgstr "上传的文件"
 
 msgid "Uptime"
-msgstr "运行时间"
+msgstr "运行时长"
 
 msgid "Use <code>/etc/ethers</code>"
 msgstr "使用 <code>/etc/ethers</code>"
