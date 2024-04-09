@@ -185,7 +185,7 @@ end
 mac = s:option(Value, "mac", translate("<abbr title=\"Media Access Control\">MAC</abbr>-Address"))
 mac.datatype = "list(macaddr)"
 mac.rmempty  = true
-mac.width="16%"
+mac.width="17%"
 
 function mac.cfgvalue(self, section)
 	local val = Value.cfgvalue(self, section)
@@ -198,7 +198,7 @@ ip.width="14%"
 
 time = s:option(Value, "leasetime", translate("Lease times"))
 time.rmempty = true
-time.width="14%"
+time.width="13%"
 
 duid = s:option(Value, "duid", translate("<abbr title=\"The DHCP Unique Identifier\">DUID</abbr>"))
 duid.datatype = "and(rangelength(20,36),hexstring)"
