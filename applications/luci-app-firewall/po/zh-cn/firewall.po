@@ -265,7 +265,7 @@ msgid "Month Days"
 msgstr "日期"
 
 msgid "Name"
-msgstr "名字"
+msgstr "名称"
 
 msgid "New SNAT rule"
 msgstr "新建 SNAT 规则"
