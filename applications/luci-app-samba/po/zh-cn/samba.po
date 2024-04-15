@@ -25,7 +25,7 @@ msgstr "基本设置"
 msgid "Hostname"
 msgstr "主机名"
 
-msgid "Name"
+msgid "Share name"
 msgstr "共享名"
 
 msgid "Network Shares"
