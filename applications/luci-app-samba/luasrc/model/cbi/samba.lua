@@ -32,7 +32,7 @@ s.anonymous = true
 s.addremove = true
 s.template = "cbi/tblsection"
 
-s:option(Value, "name", translate("Name"))
+s:option(Value, "name", translate("Share name"))
 pth = s:option(Value, "path", translate("Path"))
 if nixio.fs.access("/etc/config/fstab") then
         pth.titleref = luci.dispatcher.build_url("admin", "system", "fstab")
